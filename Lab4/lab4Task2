@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <title> Drop down box </title>
+<body style="background-color: lightblue;">
+<form action="">
+    <select name="Cities:Viacheslav">
+        <option value="Surrey"> Surrey </option>
+        <option value="Burnaby"> Burnaby </option>
+        <option value="Toronto"> Toronto </option>
+        <option value="Richmond"> Richmond </option>
+        <option value="London"> London </option>
+        </option>
+    </select>
+</form>
+<h1 style="color: green; margin-top: 100px; "> 813607</h1>
+<h6 style="color: blue; margin-top: 50px;"> Viacheslav </h6>
+<p style="color: pink;"> Canada's Deputy Prime Minister Chrystia Freeland says the federal government will invest $11.34 million in a new Black-led community hub in Toronto. <br> 
+    Speaking at a news conference on Sunday, Freeland said the money will go toward creating a permanent location for the Blackhurst Cultural Centre.
+</p>
+</h6>
+</body>
+</html>

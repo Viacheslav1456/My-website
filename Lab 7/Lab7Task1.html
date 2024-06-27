@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Rolling Dice </title>
+    <script>
+        function runGame() {
+            var name = document.getElementById('name').value;
+            var guessNumber = Number(document.getElementById('guessNumber').value);
+            var randomNumber = Math.floor(Math.random() * 11); 
+            document.getElementById('randomNumber').value = randomNumber;
+
+            if (guessNumber > randomNumber) {
+                document.getElementById('status').value = "*** Congratulation: you win. ***";
+            } else if (guessNumber < randomNumber) {
+                document.getElementById('status').value = "*** Sorry: you lost ***";
+            } else {
+                document.getElementById('status').value = ">>> Try again <<<";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 style="color: red;">Rolling Dice</h1>
+
+    <label for="guessNumber">Guess number (0 to 10):</label>
+    <input type="text" id="guessNumber"><br><br>
+    
+    <label for="randomNumber">Random Number (0 to 10):</label>
+    <input type="text" id="randomNumber" readonly>
+    <button onclick="runGame()">RUN</button><br><br>
+    <hr>
+    
+    <label for="status">Status:</label>
+    <input type="text" id="status" readonly><br><br>
+
+    <label for="name">Your name:</label>
+    <input type="text" id="name"><br><br>
+</body>
+</html>

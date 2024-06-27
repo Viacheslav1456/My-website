@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Guessing Game</title>
+    <script type="text/javascript">
+        function runGame() {
+            let num = Math.round(Math.random() * 66);
+            document.getElementById('numberDisplay').value = num;
+
+            let message;
+            if (num == 35) {
+                message = "Do not know: try again";
+            } else if (document.getElementById('over35').checked && num > 35) {
+                message = "*** Good: you win ***";
+            } else if (document.getElementById('below35').checked && num < 35) {
+                message = ">>> Smart pick: you win <<<";
+            } else {
+                message = "Bad pick: you lose";
+            }
+
+            alert(message);
+        }
+
+        function resetGame() {
+            document.getElementById('numberDisplay').value = '';
+            document.getElementById('over35').checked = false;
+            document.getElementById('below35').checked = false;
+        }
+    </script>
+</head>
+<body>
+    <h3>Simple Guessing Game</h3>
+    <form>
+        <input type="radio" id="over35" name="guess" value="over35">
+        <label for="over35">Over 35</label><br>
+        <input type="radio" id="below35" name="guess" value="below35">
+        <label for="below35">Below 35</label><br><br>
+        <input type="text" id="numberDisplay" readonly><br><br>
+        <button type="button" onclick="runGame()">RUN</button>
+        <button type="button" onclick="resetGame()">RESET</button>
+    </form>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="imgContainer" style="width: 300px; height: 300px; position: relative; text-align: right;">
+            <img id="img1" src="https://github.com/Viacheslav1456/My-website/blob/main/images/Slava.jpg?raw=true" alt="Photo of me" style="position: absolute; top: 0; bottom: 0; width: 100%; height: 100%;">
+            <img id="img2" src="https://github.com/Viacheslav1456/My-website/blob/main/images/Tiger.jpg?raw=true" alt="Tiger" style="position: absolute; top: 0; bottom: 0; width: 100%; height: 100%; display: none;">
+        </div>
+
+        <form>
+            <input type="radio" value="img1" id="radio_Button1">
+            <label for="radio_Button1"> Photo of me </label><br><br><br>
+
+            <input type="radio" value="img2" id="radio_Button2">
+            <label for="radio_Button2"> Tiger</label><br>
+        </form>
+
+        <div id="textContainer" style="position: relative; width: 100%; height: 100px; overflow: hidden;">
+            <p id="movingText" style="position: absolute; color: blue;">&lt;&lt;&lt;Jungle in Africa&gt;&gt;&gt;</p>
+        </div>
+
+        <script>
+            let radioButtons = document.querySelectorAll('input[type="radio"]'); 
+            let img1 = document.getElementById('img1');
+            let img2 = document.getElementById('img2');
+
+            radioButtons.forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    if (radio.value === 'img1') { 
+                        img1.style.display = 'block';
+                        img2.style.display = 'none';
+                    } else if (radio.value === 'img2') { 
+                        img1.style.display = 'none';
+                        img2.style.display = 'block';
+                    }
+                });
+            });
+
+            let movingText = document.getElementById('movingText');
+            let position = -movingText.offsetWidth;
+
+            function scrollingText() {
+                position++;
+                movingText.style.left = position + 'px';
+
+                if (position >= window.innerWidth) {
+                    position = -movingText.offsetWidth;
+                }
+
+                requestAnimationFrame(scrollingText);
+            }
+
+            scrollingText();
+        </script>
+    </body>
+</html>
